@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="LMSstyles.css">
+
+  <title>Library Management System</title>
+
+</head>
+
+<body>
+
+  <section class="forms">
+    <div class="form">
+      <div class="container">
+        <h1 class="text-center">Library Management <span>System</span></h1>
+        <form id="bookForm">
+
+          <div class="form-group">
+            <label for="Student"></label>
+            <center>
+              <input type="text" id="Student" class="form-control text-center" placeholder="Student Number" required />
+            </center>
+          </div><br>
+
+          <div class="form-group ">
+            <label for="Categories"></label><br>
+            <center> <select name="Categories" id="Categories" class="custom-select form-control text-center">
+                <option value="" disabled selected>Categories </option>
+                <option value="Fiction">Fiction</option>
+                <option value="Non-Fiction">Non-Fiction</option>
+              </select></center>
+          </div><br>
+
+          <div class="form-group ">
+            <label for="Fiction"></label><br>
+            <center><select name="Fiction" id="Fiction Genre" class="custom-select form-control text-center">
+                <option value="" disabled selected> Fiction</option>
+                <option value="Action and adventure">Action and adventure</option>
+                <option value="Children's">Children's</option>
+                <option value="Comic book">Comic book</option>
+                <option value="Crime">Crime</option>
+                <option value="Drama">Drama</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Horror">Horror</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Poetry">Poetry</option>
+                <option value="Romance">Romance</option>
+                <option value="Science Fiction">Science fiction</option>
+                <option value="Short Story">Short story</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Young Adult">Young adult</option>
+              </select>
+            </center>
+          </div><br>
+
+          <div class="form-group">
+            <label for="Non-Fiction"></label><br>
+            <center> <select name="Non-Fiction" id="Non-Fiction Genre" class="custom-select form-control text-center">
+                <option value="" disabled selected>Non-Fiction</option>
+                <option value="Autobiography">Autobiography</option>
+                <option value="Biography">Biography</option>
+                <option value="Business/Economics">Business/economics</option>
+                <option value="Crafts and Hobbies">Crafts/hobbies</option>
+                <option value="Cookbook">Cookbook</option>
+                <option value="Dictionary">Dictionary</option>
+                <option value="Ency">Encyclopedia</option>
+                <option value="History">History</option>
+                <option value="Journal">Journal</option>
+                <option value="Philosophy">Philosophy</option>
+                <option value="Textbook">Textbook</option>
+                <option value="True Crime">True crime</option>
+                <option value="Science">Science</option>
+                <option value="Sports and Leisure">Sports and leisure</option>
+              </select></center>
+          </div><BR>
+
+
+
+
+            <div class="form-group">
+              <label for="bookTitle"></label><br>
+              <center>
+                <select id="bookTitle" class="form-control text-center" onchange="checkSelection()">
+                  <option value="" disabled selected>Book Title</option>
+                  
+                  <option value="" data-genre="Action and adventure" disabled selected> Action and Adventure </option>
+                  <option value="addBook" data-genre="Action and adventure">Add Book</option>
+                  <option value="The Count of Monte Cristo" data-genre="Action and adventure">The Count of Monte Cristo</option>
+                  <option value="Adventures of Huckleberry Finn" data-genre="Action and adventure">Adventures of Huckleberry Finn</option>
+                  <option value="Gulliver's Travels" data-genre="Action and adventure">Gulliver's Travels</option>
+                  <option value="Around the World in Eighty Days" data-genre="Action and adventure">Around the World in Eighty Days</option>
+                  <option value="The Call of the Wild" data-genre="Action and adventure">The Call of the Wild</option>
+
+
+                  <option value="" data-genre="Children's" disabled selected> Children's </option>
+                  <option value="addBook" data-genre="Children's">Add Book</option>
+                  <option value="Where the Wild Things Are" data-genre="Children's">Where the Wild Things Are</option>
+                  <option value="Charlotte's Web" data-genre="Children's">Charlotte's Web</option>
+                  <option value="The Tale of Peter Rabbit" data-genre="Children's">The Tale of Peter Rabbit</option>
+                  <option value="A Wrinkle in Time" data-genre="Children's">A Wrinkle in Time</option>
+                  <option value="Anne of Green Gables" data-genre="Children's">Anne of Green Gables</option>
+                  
+                  <option value="" disabled selected>Select a Book</option>
+                  <option value="Marvels" data-genre="Comic book">Marvels</option>
+                  <option value="Batman: Year One" data-genre="Comic book">Batman: Year One</option>
+                  <option value="The Walking Dead: Compendium One" data-genre="Comic book">The Walking Dead: Compendium One</option>
+                  <option value="X-Men: The Dark Phoenix Saga" data-genre="Comic book">X-Men: The Dark Phoenix Saga</option>
+                  <option value="Superman Smashes the Klan" data-genre="Comic book">Superman Smashes the Klan</option>
+                  <option value="The Batman Who Laughs" data-genre="Comic book">The Batman Who Laughs</option>
+                  <option value="The Amazing SpiderMan" data-genre="Comic book">The Amazing Spider-Man</option>
+
+
+                  <option value="" data-genre="Crime" disabled selected>Crime Genre </option>
+                  <option value="addBook" data-genre="Crime">Add Book</option>
+                  <option value="Make the Panty-Ripper" data-genre="Crime">Make the Panty-Ripper</option>
+                  <option value="No Body, No Crime-Rafe Cameron" data-genre="Crime">No Body, No Crime-Rafe Cameron</option>
+                  <option value="Over My Dead Body" data-genre="Crime">Over My Dead Body</option>
+                  <option value="Redemption | Mafia Romance" data-genre="Crime">Redemption | Mafia Romance</option>
+                  <option value="Hustle" data-genre="Crime">Hustle</option>
+
+                  <option value="" data-genre="Drama" disabled selected>Drama Genre </option>
+                  <option value="addBook" data-genre="Drama">Add Book</option>
+                  <option value="Hamlet" data-genre="Drama">Hamlet</option>
+                  <option value="Othello" data-genre="Drama">Othello</option>
+                  <option value="The Tempest" data-genre="Drama">The Tempest</option>
+                  <option value="Doctor Faustus" data-genre="Drama">Doctor Faustus</option>
+
+                  <option value=""  data-genre="Fantasy" disabled selected>Fantasy Genre</option>
+                  <option value="addBook" data-genre="Fantasy">Add Book</option>
+                  <option value="Pick The Second Male Lead" data-genre="Fantasy">Pick The Second Male Lead</option>
+                  <option value="Another Life, Another Me" data-genre="Fantasy">Another Life, Another Me</option>
+                  <option value="Ten Lifetimes" data-genre="Fantasy">Ten Lifetimes</option>
+                  <option value="The Villainess who has Reborn Five Times" data-genre="Fantasy">The Villainess who has Reborn Five Times</option>
+                  <option value="Reincarnated with a deities Harem" data-genre="Fantasy">Reincarnated with a deities Harem</option>
+                  
+                  <option value="" data-genre="Horror" disabled selected>Horror Genre</option>
+                  <option value="addBook" data-genre="Horror">Add Book</option>
+                  <option value="Frankenstein" data-genre="Horror">Frankenstein</option>
+                  <option value="Hell House" data-genre="Horror">Hell House</option>
+                  <option value="Ghost Story" data-genre="Horror">Ghost Story</option>
+                  <option value="The Woman in Black" data-genre="Horror">The Woman in Black</option>
+
+                  <option value=""  data-genre="Mystery" disabled selected>Mystery Genre</option>
+                  <option value="addBook" data-genre="Mystery">Add Book</option>
+                  <option value="In the Woods" data-genre="Mystery">In the Woods</option>
+                  <option value="Murder on the Orient Express" data-genre="Mystery">Murder on the Orient Express</option>
+                  <option value="Shutter Island" data-genre="Mystery">Shutter Island</option>
+                  <option value="The Silent Patient" data-genre="Mystery">The Silent Patient</option>
+
+                  <option value="" data-genre="Poetry" disabled selected>Poetry Genre</option>
+                  <option value="addBook" data-genre="Poetry">Add Book</option>
+                  <option value="12 am" data-genre="Poetry">12 am</option>
+                  <option value="love & nostalgia" data-genre="Poetry">love & nostalgia</option>
+                  <option value="It Isn\'t Love" data-genre="Poetry">It Isn\'t Love</option>
+                  <option value="letters to no one" data-genre="Poetry">letters to no one</option>
+                  <option value="locutions" data-genre="Poetry">locutions</option>
+
+                  <option value="" data-genre="Romance" disabled selected>Romance Genre</option>',
+                  <option value="addBook" data-genre="Romance">Add Book</option>
+                  <option value="Knock, Knock, Professor" data-genre="Romance">Knock, Knock, Professor</option>
+                  <option value="POSSESSIVE 1: Tyron Zapanta" data-genre="Romance">POSSESSIVE 1: Tyron Zapanta</option>
+                  <option value="Temptation Island: Sinful Desire" data-genre="Romance">Temptation Island: Sinful Desire</option>
+                  <option value="Darkest Touch" data-genre="Romance">Darkest Touch</option>
+                  <option value="Danger, Danger, Mr.Stranger" data-genre="Romance">Danger, Danger, Mr.Stranger</option>
+
+                  <option value="" data-genre="Science Fiction" disabled selected>Science Fiction Genre</option>',
+                  <option value="addBook" data-genre="Science Fiction">Add Book</option>
+                  <option value="Knock, Knock, Professor" data-genre="Science Fiction">1Knock, Knock, Professor</option>
+                  <option value="POSSESSIVE 1: Tyron Zapanta" data-genre="Science Fiction">POSSESSIVE 1: Tyron Zapanta</option>
+                  <option value="Temptation Island: Sinful Desire" data-genre="Science Fiction">Temptation Island: Sinful Desire</option>
+                  <option value="Darkest Touch" data-genre="Science Fiction">Darkest Touch</option>
+                  <option value="Danger, Danger, Mr.Stranger" data-genre="Science Fiction">Danger, Danger, Mr.Stranger</option>
+
+                  <option value="" data-genre="Thriller" disabled selected>Thriller Genre</option>
+                  <option value="addBook" data-genre="Thriller">Add Book</option>
+                  <option value="THE VISION" data-genre="Thriller">THE VISION</option>
+                  <option value="A Brilliant Plan" data-genre="Thriller">A Brilliant Plan</option>
+                  <option value="Invisible Armies" data-genre="Thriller">Invisible Armies</option>
+                  <option value="The Accidental Siren" data-genre="Thriller">The Accidental Siren</option>
+                  <option value="The Whole Truth" data-genre="Thriller">The Whole Truth</option>
+
+                  <option value=""  data-genre="Short Story" disabled selected>Short Story Genre</option>
+                  <option value="addBook" data-genre="Short Story">Add Book</option>
+                  <option value="Honey: Theo Nott" data-genre="Short Story">Honey: Theo Nott</option>
+                  <option value="Kaklase" data-genre="Short Story">Kaklase</option>
+                  <option value="The Girl He Never Noticed" data-genre="Short Story">The Girl He Never Noticed</option>
+                  <option value="REPLACEMENT WIFE" data-genre="Short Story">REPLACEMENT WIFE</option>
+                  <option value="Lover's Guilt: An Erotic" data-genre="Short Story">Lover's Guilt: An Erotic</option>
+
+                  <option value="" data-genre="Young Adult" disabled selected>Young Adult Genre</option>
+                  <option value="addBook" data-genre="Young Adult">Add Book</option>
+                  <option value="Alessandro" data-genre="Young Adult">Alessandro</option>
+                  <option value="Coincidentally" data-genre="Young Adult">Coincidentally</option>
+                  <option value="Dominic" data-genre="Young Adult">Dominic</option>
+                  <option value="A Touch of Sin" data-genre="Young Adult">A Touch of Sin</option>
+                  <option value="Bulletproof" data-genre="Young Adult">Bulletproof</option>
+                  
+                  <option value="" data-genre="Autobiography" disabled selected>Autobiography Genre</option>
+                  <option value="addBook" data-genre="Autobiography">Add Book</option>
+                  <option value="The Diary of a Young Girl" data-genre="Autobiography">The Diary of a Young Girl</option>
+                  <option value="Autobiography of a Yogi" data-genre="Autobiography">Autobiography of a Yogi</option>
+                  <option value="I Am Malala: The Girl Who Stood Up for Education and was Shot by the Taliban" data-genre="Autobiography">I Am Malala: The Girl Who Stood Up for Education and was Shot by the Taliban</option>
+                  <option value="Becoming A Visible Man" data-genre="Autobiography">Becoming A Visible Man</option>
+
+             
+                  <option value="" data-genre="Biography" disabled selected>Biography Genre</option>
+                  <option value="addBook" data-genre="Biography">Add Book</option>
+                  <option value="Alexander Hamilton" data-genre="Biography">Alexander Hamilton</option>
+                  <option value="The Immortal Life of Henrietta Lacks" data-genre="Biography">The Immortal Life of Henrietta Lacks</option>
+                  <option value="The Mayor of Castro Street: The Life and Times of Harvey Milk" data-genre="Biography">The Mayor of Castro Street: The Life and Times of Harvey Milk</option>
+                  <option value="Wong Kar-Wai: Auteur of Time" data-genre="Biography">Wong Kar-Wai: Auteur of Time</option>
+
+                  <option value=""  data-genre="Crafts" disabled selected>Crafts and Hobbies Genre</option>
+                  <option value="addBook" data-genre="Crafts and Hobbies">Add Book</option>
+                  <option value="A Step-by-Step Guide to Creative Skills" data-genre="Crafts and Hobbies">A Step-by-Step Guide to Creative Skills</option>
+                  <option value="An Adventure Brewing" data-genre="Crafts and Hobbies">An Adventure Brewing</option>
+                  <option value="The Forgotten Arts and Crafts" data-genre="Crafts and Hobbies">The Forgotten Arts and Crafts</option>
+                  <option value="A Stash of One's Own: Knitters on Loving, Living with, and Letting Go of Yarn" data-genre="Crafts and Hobbies">A Stash of One's Own: Knitters on Loving, Living with, and Letting Go of Yarn</option>
+                  
+                  <option value="" data-status="Winner" disabled selected>Business/Economics Genre</option>
+                  <option value="addBook" data-genre="Business/Economics">Add Book</option>
+                  <option value="Freakonomics" data-genre="Business/Economics">Freakonomics</option>
+                  <option value="Capital in the Twenty-First Century" data-genre="Business/Economics" data-status="Winner">Capital in the Twenty-First Century</option>
+                  <option value="The World is Flat" data-genre="Business/Economics" data-status="Shortlist">The World is Flat</option>
+                  <option value="The Second Machine Age" data-genre="Business/Economics">The Second Machine Age</option>
+
+                  <option value="" data-genre="Cookbook" disabled selected>Cookbook Genre</option>
+                  <option value="addBook" data-genre="Cookbook">Add Book</option>
+                  <option value="Magnolia Table" data-genre="Cookbook">Magnolia Table</option>
+                  <option value="The Tale of Peter Rabbit" data-genre="Cookbook">The Tale of Peter Rabbit</option>
+                  <option value="How To Make The Best Coffee At Home" data-genre="Cookbook">How To Make The Best Coffee At Home</option>
+                  <option value="Real Superfoods: Everyday Ingredients to Elevate Your Health" data-genre="Cookbook">Real Superfoods: Everyday Ingredients to Elevate Your Health</option>
+
+                  <option value=""  data-genre="Dictionary" disabled selected>Dictionary Genre</option>
+                  <option value="addBook" data-genre="Dictionary">Add Book</option>
+                  <option value="The Dictionary People: The Unsung Heroes Who Created the Oxford English Dictionary" data-genre="Dictionary">The Dictionary People: The Unsung Heroes Who Created the Oxford English Dictionary</option>
+                  <option value="The Professor and the Madman: A Tale of Murder, Insanity and the Making of the Oxford English Dictionary" data-genre="Dictionary">The Professor and the Madman: A Tale of Murder, Insanity and the Making of the Oxford English Dictionary</option>
+                  <option value="Merriam-Webster's Collegiate Dictionary" data-genre="Dictionary">Merriam-Webster's Collegiate Dictionary</option>
+                  <option value="The Unabridged Devil's Dictionary" data-genre="Dictionary">The Unabridged Devil's Dictionary</option>     
+              
+
+                  <option value="" data-genre="Ency" disabled selected>Encyclopedia Genre</option>
+                  <option value="addBook" data-genre="Ency">Add Book</option>
+                  <option value="The Know-It-All (Paperback)" data-genre="Ency">The Know-It-All (Paperback)</option>
+                  <option value="The Philosophy Book: Big Ideas Simply Explained (Hardcover)" data-genre="Ency">The Philosophy Book: Big Ideas Simply Explained (Hardcover)</option>
+                  <option value="A Tolkien Bestiary (Hardcover)" data-genre="Ency">A Tolkien Bestiary (Hardcover)</option>
+                  <option value="The DC Comic book Encyclopedia (Hardcover)" data-genre="Ency">The DC Comic book Encyclopedia (Hardcover)</option>
+
+                  <option value="" data-genre="History" disabled selected>History Genre</option>
+                  <option value="addBook" data-genre="History">Add Book</option>
+                  <option value="A City on Mars: Can We Settle Space, Should We Settle Space, and Have We Really Thought This Through?" data-genre="History">A City on Mars: Can We Settle Space, Should We Settle Space, and Have We Really Thought This Through?</option>
+                  <option value="Endgame: Inside the Royal Family and the Monarchy's Fight for Survival" data-genre="History">Endgame: Inside the Royal Family and the Monarchy's Fight for Survival</option>
+                  <option value="Gator Country: Deception, Danger, and Alligators in the Everglades" data-genre="History">Gator Country: Deception, Danger, and Alligators in the Everglades</option>
+              
+                  <option value="" data-genre="Journal" disabled selected>Journal Genre</option>
+                  <option value="addBook" data-genre="Journal">Add Book</option>
+                  <option value="Self-Love Workbook for Women: Release Self-Doubt, Build Self-Compassion, and Embrace Who You Are" data-genre="Journal">Self-Love Workbook for Women: Release Self-Doubt, Build Self-Compassion, and Embrace Who You Are</option>
+                  <option value="Step by Step: The Life In My Journeys" data-genre="Journal">Step by Step: The Life In My Journeys</option>
+                  <option value="Draw Your Day: An Inspiring Guide to Keeping a Sketch Journal" data-genre="Journal">Draw Your Day: An Inspiring Guide to Keeping a Sketch Journal</option>
+                  <option value="The Untethered Soul Guided Journal: Practices to Journey Beyond Yourself" data-genre="Journal">The Untethered Soul Guided Journal: Practices to Journey Beyond Yourself</option>
+              
+                  <option value=""  data-genre="Philosophy" disabled selected>Philosophy Genre</option>
+                  <option value="addBook" data-genre="Philosophy">Add Book</option>
+                  <option value="Greenlights" data-genre="Philosophy">Greenlights</option>
+                  <option value="The Boy, the Mole, the Fox and the Horse" data-genre="Philosophy">The Boy, the Mole, the Fox and the Horse</option>
+                  <option value="The Stranger in the Lifeboat" data-genre="Philosophy">The Stranger in the Lifeboat</option>
+                  <option value="Can't Hurt Me: Master Your Mind and Defy the Odds" data-genre="Philosophy">Can't Hurt Me: Master Your Mind and Defy the Odds</option>
+                 
+                  
+                  <option value="" data-genre="Textbook" disabled selected>Textbook Genre</option>
+                  <option value="addBook" data-genre="Textbook">Add Book</option>
+                  <option value="Fundamentals of Software Architecture: An Engineering Approach" data-genre="Textbook">Fundamentals of Software Architecture: An Engineering Approach</option>
+                  <option value="180 Days: Two Teachers and the Quest to Engage and Empower Adolescents" data-genre="Textbook">180 Days: Two Teachers and the Quest to Engage and Empower Adolescents</option>
+                  <option value="The Gay Agenda: A Modern Queer History & Handbook" data-genre="Textbook">The Gay Agenda: A Modern Queer History & Handbook</option>
+                  <option value="Advances in Financial Machine Learning" data-genre="Textbook">Advances in Financial Machine Learning</option>
+
+                  <option value=""  data-genre="True Crime" disabled selected>True Crime Genre</option>
+                  <option value="addBook" data-genre="True Crime">Add Book</option>
+                  <option value="Among the Bros: A Fraternity Crime Story" data-genre="True Crime">Among the Bros: A Fraternity Crime Story</option>
+                  <option value="In the Pines: A Lynching, A Lie, A Reckoning" data-genre="True Crime">In the Pines: A Lynching, A Lie, A Reckoning</option>
+                  <option value="Gator Country: Deception, Danger, and Alligators in the Everglades" data-genre="True Crime">Gator Country: Deception, Danger, and Alligators in the Everglades</option>
+                  <option value="Becoming the Boogeyman" data-genre="True Crime">Becoming the Boogeyman</option>
+
+                  <option value="" data-genre="Science" disabled selected>Science Genre</option>
+                  <option value="addBook" data-genre="Science">Add Book</option>
+                  <option value="Breaking Through: My Life in Science" data-genre="Science">Breaking Through: My Life in Science</option>
+                  <option value="Most Delicious Poison: The Story of Nature's Toxins―From Spices to Vices" data-genre="Science">Most Delicious Poison: The Story of Nature's Toxins―From Spices to Vices</option>
+                  <option value="Blood Memory: The Tragic Decline and Improbable Resurrection of the American Buffalo" data-genre="Science">Blood Memory: The Tragic Decline and Improbable Resurrection of the American Buffalo</option>
+                  <option value="Poison: The History of Potions, Powders and Murderous Practitioners" data-genre="Science">Poison: The History of Potions, Powders and Murderous Practitioners</option>
+                  
+                  <option value="" data-genre="Sports and Leisure" disabled selected>Sports and Leisure</option>
+                  <option value="addBook" data-genre="Sports and Leisure">Add Book</option>
+                  <option value="Ted Willia s at War (Hardcover)" data-genre="Sports and Leisure">Ted Williams at War (Hardcover)</option>
+                  <option value="The Teammates: A Portrait of a Friendship (Paperback)" data-genre="Sports and Leisure">The Teammates: A Portrait of a Friendship (Paperback)</option>
+                  <option value="All In: An Autobiography (Hardcover)" data-genre="Sports and Leisure">All In: An Autobiography (Hardcover)</option>
+                  <option value="I Came As a Shadow: An Autobiography (Hardcover)" data-genre="Sports and Leisure">I Came As a Shadow: An Autobiography (Hardcover)</option>
+                </select>
+              </center>
+            
+            </div><br>
+            
+
+          <div class="form-group">
+            <label for="author"></label>
+            <center>
+              <input type="text" id="author" class="form-control text-center" placeholder="Author's Name" readonly required/>
+            </center>
+          </div><br>
+
+          <div class="form-group">
+            <label for="year"></label>
+            <center>
+              <input type="text" id="year" class="form-control text-center" placeholder="Year"  readonly required  />
+            </center>
+          </div><br>
+          <div class="form-group">
+            <label for="quantity"></label>
+            <center>
+              <input type="number" id="quantity" class="form-control text-center" placeholder="Quantity" required />
+            </center>
+          </div><br>
+
+
+          <center>
+            <div class="buttons">
+              <button class="btn btn-success" type="button" id="addBtn">
+                Add Book
+              </button>
+              <button class="btn btn-success" type="button" id="borrowBtn">
+                Borrow Book
+              </button>
+              <button class="btn btn-warning " type="button" id="clearBtn">
+                Clear
+              </button>
+              <button class="btn btn-warning " id="clearBtn" onclick="logout()">
+                Logout
+              </button>
+            </div>
+          </center>
+
+        </form><br>
+
+      </div>
+
+                  </center>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <!--TABLE-->
+    <table class="table mt-4" id="bookTable">
+      <thead>
+        <tr>
+          <th>Student Number</th>
+          <th>Categories</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Genre</th>
+          <th>Year</th>
+          <th>Quantity</th>
+          <th>Date / Due Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+  </section>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="LMSscript.js"></script>
+</body>
+
+</html> 

@@ -1,0 +1,209 @@
+
+    body {
+      display: block;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      height: 100%;
+      margin: 0;
+      background-position: center;
+      background-size: cover;
+      background-image: url('images/pexels-min-an-694740.jpg');
+      background-attachment: fixed;
+
+    }
+
+
+    #booktable {
+      color: #fff;
+    }
+
+    .modal {
+      color: #212121;
+    }
+
+    h1 {
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      color: #c4c2c2;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .form-group input,
+    .form-group select {
+      transition: transform 0.3s ease;
+    }
+
+    .form-group input:hover,
+    .form-group select:hover {
+      border-color: #A68668;
+      box-shadow: 2px 2px 2px 2px #A68668;
+      transform: scale(1.05);
+    }
+
+    .form-group input:not(:hover),
+    .form-group select:not(:hover) {
+      transform: scale(1);
+    }
+
+    .btn {
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+    }
+
+    .btn:active {
+      transform: scale(0.9);
+    }
+
+    .container {
+      text-align: left;
+      border-radius: 10px;
+      border: solid 1px green;
+      background-image: url('images/national-emergency-library-1.jpg');
+      background-position: center;
+      background-size: cover;
+      padding-top: 50px;
+      padding-bottom: 20px;
+      width: 50%;
+      height: 100%;
+    }
+
+
+
+
+    .form-group label {
+      font-family: monospace;
+      margin-left: 40px;
+    }
+
+    .form-group select {
+      border-radius: 20px;
+      color: rgb(0, 0, 0);
+      background-color: #c4c2c2;
+      box-shadow: 3px 3px 3px 3px #0003;
+      padding: 5px 5px;
+      font-family: Arial, Helvetica, sans-serif;
+      width: 450px;
+    }
+
+    .form-group input {
+      border-radius: 20px;
+      color: #000000;
+      background-color: #c4c2c2;
+      box-shadow: 3px 3px 3px 3px #0003;
+      padding: 5px 5px;
+      font-family: Arial, Helvetica, sans-serif;
+      width: 450px;
+    }
+
+    #Fiction\ Genre,
+    #Non-Fiction\ Genre {
+      background-color: #c4c2c2;
+    }
+
+    #addBtn {
+      border-radius: 15px;
+      border: solid 1px #964B00;
+      font-family: Courier;
+      margin: 3px;
+      background: #A68668;
+      color: #fff;
+    }
+
+    #borrowBtn {
+      border-radius: 15px;
+      border: solid 1px #964B00;
+      font-family: Courier;
+      margin: 3px;
+      background: #A68668;
+      color: #fff;
+    }
+
+    #returnBtn {
+      border-radius: 15px;
+      border: solid 1px #964B00;
+      font-family: Courier;
+      margin: 3px;
+      background: #A68668;
+      color: #fff;
+    }
+
+    #clearBtn {
+      border-radius: 15px;
+      border: solid 1px #A68668;
+      font-family: Courier;
+      margin: 3px;
+      background: #B6465F;
+      color: #fff;
+    }
+
+    .forms .form .container span {
+      color: #B6465F;
+    }
+
+    #editModal {
+      backdrop-filter: blur(5px);
+    }
+
+    #editModal .modal-content {
+      background: url('images/national-emergency-library-1.jpg') center center no-repeat;
+      background-size: cover;
+    }
+
+    /* booktable/database? */
+    #bookTable {
+      margin-top: 30px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    #bookTable th,
+    #bookTable td {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    #bookTable th {
+      background-color: #A68668;
+      color: #000000;
+    }
+
+    #bookTable tbody tr:nth-child(even) {
+      background-color: #F0F0F0;
+    }
+
+    #bookTable tbody tr:hover {
+      background-color: #D3D3D3;
+    }
+
+    #bookTable td:last-child {
+      white-space: nowrap;
+    }
+
+    #bookTable .editBtn,
+    #bookTable .deleteBtn {
+      padding: 5px 10px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+
+    #bookTable .editBtn {
+      background-color: #DAA520;
+      border: none;
+    }
+
+    #bookTable .deleteBtn {
+      background-color: #8B4513;
+      border: none;
+    }
+
+    .non-editable {
+      background-color: #8B4513; 
+      color: #000000; 
+      cursor: not-allowed;
+    }
